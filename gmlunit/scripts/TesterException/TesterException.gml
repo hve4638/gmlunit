@@ -20,12 +20,20 @@ function TesterException(resultForatter) constructor {
 	}
 	
 	function toString() {
-		var output = ""
+		var output = "TesterException\n";
 		var len = array_length(failedArray);
 		
-		output += len == 1
-				  ? "1 test failed"
-				  : string(len) + " tests failed";
+		switch(len) {
+			case 0:
+				output += "TILT";
+				break
+			case 1:
+				output += "1 test failed";
+				break
+			default:
+				output += string(len) + " tests failed";
+				break
+		}
 		output += "\n";
 		
 		for(var i = 0; i < len; i++) {

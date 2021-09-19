@@ -51,12 +51,12 @@ function Tester() constructor {
 	}
 	
 	function ThrowIfFailed() {
-		if formatter.failCount() > 0
+		if formatter.FailCount() > 0
 			throw new TesterException(formatter);
 	}
 	
 	function ShowIfFailed() {
-		if formatter.failCount() > 0 
+		if formatter.FailCount() > 0 
 			show_message(new TesterException(formatter));
 	}
 }

@@ -34,7 +34,7 @@
   ],
   "Folders": [
     {"folderPath":"folders/gmlunit.yy","order":0,"resourceVersion":"1.0","name":"gmlunit","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/gmlunit/Exceptions.yy","order":5,"resourceVersion":"1.0","name":"Exceptions","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/gmlunit/exceptions.yy","order":5,"resourceVersion":"1.0","name":"exceptions","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/example.yy","order":1,"resourceVersion":"1.0","name":"example","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
