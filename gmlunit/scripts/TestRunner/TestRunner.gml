@@ -1,5 +1,5 @@
 function TestRunner() constructor {
-	function run(testMethod) {
+	function Run(testMethod) {
 		var isSuccess;
 		var beginTime, endTime;
 		var result = new TestResult();

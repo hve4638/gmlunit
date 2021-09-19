@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "TEST",
-    "path": "folders/TEST.yy",
+    "name": "gmlunit",
+    "path": "folders/gmlunit.yy",
   },
   "resourceVersion": "1.0",
   "name": "Assertion",

@@ -14,7 +14,7 @@ function TestResult(testcaseName = "") constructor {
 	time = 0;
 	reason = undefined;
 	
-	function isPassed() {
+	function IsPassed() {
 		switch(state) {
 			case TestResultState.pass:
 			case TestResultState.undefinedPass:
@@ -27,7 +27,7 @@ function TestResult(testcaseName = "") constructor {
 		}
 	}
 	
-	function isFailed() {
+	function IsFailed() {
 		switch(state) {
 			case TestResultState.fail:
 			case TestResultState.failWithError:
@@ -62,7 +62,7 @@ function TestResult(testcaseName = "") constructor {
 				return "[PASS]";
 			
 			case TestResultState.undefinedPass:
-				return "[PASS?]";
+				return "[PASS]";
 			
 			case TestResultState.fail:
 			case TestResultState.failWithError:

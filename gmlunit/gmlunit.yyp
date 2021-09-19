@@ -1,16 +1,16 @@
 {
   "resources": [
     {"id":{"name":"Tester","path":"scripts/Tester/Tester.yy",},"order":0,},
-    {"id":{"name":"oTest","path":"objects/oTest/oTest.yy",},"order":2,},
+    {"id":{"name":"oTest","path":"objects/oTest/oTest.yy",},"order":0,},
     {"id":{"name":"Assertion","path":"scripts/Assertion/Assertion.yy",},"order":4,},
     {"id":{"name":"TestResult","path":"scripts/TestResult/TestResult.yy",},"order":3,},
     {"id":{"name":"TestRunner","path":"scripts/TestRunner/TestRunner.yy",},"order":1,},
     {"id":{"name":"YYGMLWrapper","path":"scripts/YYGMLWrapper/YYGMLWrapper.yy",},"order":2,},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":1,},
+    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":2,},
     {"id":{"name":"TestResultFormatter","path":"scripts/TestResultFormatter/TestResultFormatter.yy",},"order":2,},
     {"id":{"name":"AssertionException","path":"scripts/AssertionException/AssertionException.yy",},"order":0,},
     {"id":{"name":"TesterException","path":"scripts/TesterException/TesterException.yy",},"order":1,},
-    {"id":{"name":"TesterTest","path":"scripts/TesterTest/TesterTest.yy",},"order":3,},
+    {"id":{"name":"TesterTest","path":"scripts/TesterTest/TesterTest.yy",},"order":1,},
   ],
   "Options": [
     {"name":"Amazon Fire","path":"options/amazonfire/options_amazonfire.yy",},
@@ -33,8 +33,9 @@
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "Folders": [
-    {"folderPath":"folders/TEST.yy","order":0,"resourceVersion":"1.0","name":"TEST","tags":[],"resourceType":"GMFolder",},
-    {"folderPath":"folders/TEST/Exceptions.yy","order":5,"resourceVersion":"1.0","name":"Exceptions","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/gmlunit.yy","order":0,"resourceVersion":"1.0","name":"gmlunit","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/gmlunit/Exceptions.yy","order":5,"resourceVersion":"1.0","name":"Exceptions","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/example.yy","order":1,"resourceVersion":"1.0","name":"example","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
@@ -44,7 +45,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.3.574",
+    "IDEVersion": "2.3.4.580",
   },
   "resourceVersion": "1.4",
   "name": "gmlunit",

@@ -3,8 +3,10 @@ function Tester() constructor {
 	runner = new TestRunner();
 	formatter = new TestResultFormatter();
 	
-	function run() {
+	function Run() {
 		var testArray = getTests();
+		
+		formatter.Reset();
 		
 		var testName, testMethod;
 		var len = array_length(testArray);
@@ -13,10 +15,10 @@ function Tester() constructor {
 			testMethod = self[$ testName];
 			
 			var result;
-			result = runner.run(testMethod);
+			result = runner.Run(testMethod);
 			result.name = testName;
 			
-			formatter.add(result);
+			formatter.Add(result);
 		}
 	}
 	
@@ -44,16 +46,16 @@ function Tester() constructor {
 		return false;
 	}
 	
-	function show() {
-		show_message(formatter.detail())
+	function Show() {
+		show_message(formatter.Detail())
 	}
 	
-	function throwIfFailed() {
+	function ThrowIfFailed() {
 		if formatter.failCount() > 0
 			throw new TesterException(formatter);
 	}
 	
-	function showIfFailed() {
+	function ShowIfFailed() {
 		if formatter.failCount() > 0 
 			show_message(new TesterException(formatter));
 	}

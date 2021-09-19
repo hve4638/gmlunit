@@ -13,7 +13,6 @@ function YYGMLWrapper(exception) constructor {
 		var output = "";
 		var len = array_length(stacktrace);
 		
-		//output += "stacktrace : \n";
 		for(var i = 0; i < len; i++)
 			output += "[" + string(len - i - 1) + "] " + stacktrace[i] + "\n";
 		

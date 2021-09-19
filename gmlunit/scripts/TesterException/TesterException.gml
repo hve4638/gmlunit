@@ -7,7 +7,7 @@ function TesterException(resultForatter) constructor {
 		for(var i = 0; i < len; i++) {
 			var result = results[i];
 		
-			if result.isFailed() {
+			if result.IsFailed() {
 				var report = { name : "", reason : "" }
 				report.name = result.name;
 				

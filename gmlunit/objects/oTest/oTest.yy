@@ -23,8 +23,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "gmlunit",
-    "path": "gmlunit.yyp",
+    "name": "example",
+    "path": "folders/example.yy",
   },
   "resourceVersion": "1.0",
   "name": "oTest",

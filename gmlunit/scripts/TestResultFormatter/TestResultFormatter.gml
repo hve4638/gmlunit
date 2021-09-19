@@ -1,21 +1,32 @@
 function TestResultFormatter() constructor {
 	resultArray = [];
-	changed = false;
+	isChanged = false;
 	report = {
 		total : 0,
 		pass : 0,
 		fail : 0,
-		results : []
+		detail : []
 	}
 	
-	function passCount() {
-		update();
-		return state.pass;
+	function Add(testResult) {
+		array_push(resultArray, testResult);
+		isChanged = true;
 	}
 	
-	function failCount() {
+	function Reset() {
+		resultArray = [];
+		report = { pass : 0, fail : 0, total : 0, detail : [] }
+		isChanged = true;
+	}
+	
+	function PassCount() {
 		update();
-		return state.fail;
+		return report.pass;
+	}
+	
+	function FailCount() {
+		update();
+		return report.fail;
 	}
 	
 	function getResults() {
@@ -29,8 +40,7 @@ function TestResultFormatter() constructor {
 			return [];
 	}
 	
-	
- 	function summary() {
+ 	function Summary() {
 		update();
 		
 		var total, pass, fail;
@@ -48,32 +58,22 @@ function TestResultFormatter() constructor {
 		return output;
 	}
 	
-	function detail() {
+	function Detail() {
 		var output = "";
-		output += summary() + "\n";
+		output += Summary() + "\n";
 		
-		var len = array_length(report.results);
-		for(var i = 0; i < len; i++) {
-			var result = report.results[i];
-			
-			if result.passed
-				output += "[PASS] "
-			else
-				output += "[FAIL] "
-				
-			output += result.name + " " + result.reason;
-			output += "\n"
-		}
+		var len = array_length(report.detail);
+		for(var i = 0; i < len; i++)
+			output += report.detail[i] + "\n";
 		
 		return output;
 	}
 	
 	function update() {
-		if changed {
+		if isChanged {
 			sortResult();
-			
 			updateStateAndInfo();
-			changed = false;
+			isChanged = false;
 		}
 	}
 	
@@ -91,27 +91,11 @@ function TestResultFormatter() constructor {
 	
 	function updateStateAndInfo() {
 		updateState();
-		report.results = []
+		report.detail = []
 		
 		var len = array_length(resultArray);
-		for(var i = 0; i < len; i++) {
-			var result = resultArray[i];
-			var info = {
-				name : "",
-				passed : false,
-				reason : ""
-			}
-			
-			info.name = result.name;
-			
-			if result.isPassed()
-				info.passed = true;
-			
-			if !is_undefined(result.reason)
-				info.reason = string(result.reason);
-		
-			array_push(report.results, info);
-		}
+		for(var i = 0; i < len; i++)
+			array_push(report.detail, string(resultArray[i]));
 	}
 	
 	function updateState() {
@@ -122,9 +106,9 @@ function TestResultFormatter() constructor {
 		for(var i = 0; i < total; i++) {
 			var result = resultArray[i];
 			
-			if result.isPassed()
+			if result.IsPassed()
 				passCount++;
-			else if result.isFailed()
+			else if result.IsFailed()
 				failCount++;
 		}
 		
@@ -133,14 +117,5 @@ function TestResultFormatter() constructor {
 		report.fail = failCount;
 	}
 	
-	function add(testResult) {
-		array_push(resultArray, testResult);
-		changed = true;
-	}
-	
-	function reset() {
-		resultArray = [];
-		state = { pass : 0, fail : 0, total : 0 }
-		changed = true;
-	}
+	Reset();
 }
