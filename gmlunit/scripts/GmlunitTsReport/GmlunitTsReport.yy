@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "TcComponent",
-    "path": "folders/gmlunit/TcComponent.yy",
+    "name": "TsStruct",
+    "path": "folders/gmlunit/TsStruct.yy",
   },
   "resourceVersion": "1.0",
-  "name": "TestRunner",
+  "name": "GmlunitTsReport",
   "tags": [],
   "resourceType": "GMScript",
 }

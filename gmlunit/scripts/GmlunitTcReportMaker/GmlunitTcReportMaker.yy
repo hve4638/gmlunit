@@ -6,7 +6,7 @@
     "path": "folders/gmlunit/TcComponent.yy",
   },
   "resourceVersion": "1.0",
-  "name": "TestRunner",
+  "name": "GmlunitTcReportMaker",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -1,0 +1,43 @@
+@Name : gmlunit
+@Author : Hve
+@Last Changed : 2022/03/13
+@Dependence : -
+@Version : 1.5.0
+
+유닛테스트 프레임워크
+ * Testcase() 를 상속하여 사용
+ * test 접미어가 붙는 메소드 테스트
+ * return 값이 false거나 예외 발생시 테스트 실패
+ * return 값이 true거나 undefind(no return)라면 성공
+
+Testcase()
+ * Run() : 테스트 수행
+ * SetKeyword(keyword) : 테스트메서드 키워드 설정 (기본값: test)
+ * Show() : 테스트 결과 메시지 출력
+ * ShowIfFailed() : 실패시 테스트 결과 메시지 출력
+ * ThrowIfFailed() : 실패시 테스트 결과 예외 처리
+ * GetReportLog() : 결과 문자열 리턴
+ * GetReport() : 결과 구조체 리턴
+ *	{
+		name<str>
+		total<num>
+		pass<num>
+		fail<num>
+		detail[<str>]
+	}
+
+Testsuite()
+ * Add(testcase) : testcase 추가
+ * Run() : 테스트 수행
+ * Show() : 테스트 결과 메시지 출력
+ * ShowIfFailed() : 실패시 테스트 결과 메시지 출력
+ * ThrowIfFailed() : 실패시 테스트 결과 예외 처리
+ * GetReportLog() : 결과 문자열 리턴
+ * GetReport() : 결과 구조체 리턴
+ *	{
+		name<str>
+		total<num>
+		pass<num>
+		fail<num>
+		faildetail[<GmlunitTcReport>]
+	}

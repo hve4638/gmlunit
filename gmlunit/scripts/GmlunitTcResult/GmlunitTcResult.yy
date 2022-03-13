@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "TcComponent",
-    "path": "folders/gmlunit/TcComponent.yy",
+    "name": "Result",
+    "path": "folders/gmlunit/TcStruct/Result.yy",
   },
   "resourceVersion": "1.0",
-  "name": "TestRunner",
+  "name": "GmlunitTcResult",
   "tags": [],
   "resourceType": "GMScript",
 }

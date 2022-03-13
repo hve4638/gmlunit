@@ -1,5 +1,5 @@
-var tester = new TesterTest();
-tester.Run();
-tester.Show();
-tester.ShowIfFailed();
-tester.ThrowIfFailed();
+var tc = new TcTest();
+tc.Run();
+tc.Show();
+tc.ShowIfFailed();
+tc.ThrowIfFailed();

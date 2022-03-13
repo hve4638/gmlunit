@@ -1,40 +1,27 @@
-function AssertionException(message = "", isTraceStack = false) constructor {
-	self.message = message;
-	stacktrace = [];
-	onTraceStack = isTraceStack;
+function AssertionException(name = "", trace = false) : Exception("Assertion failed", undefined, trace) constructor {
+	self.assertionName = name;
 	
-	function traceStack() {
-		try {
-			show_error("throw", true);	
-		}
-		catch(ex) {
-			var len = array_length(ex.stacktrace);
-			
-			stacktrace = [];
-			array_copy(stacktrace, 0, ex.stacktrace, 2, len - 2);
-		}
+	Reason = function(reason) {
+		self.reason = reason;
 	}
 	
-	function toString() {
-		var output =	message != ""
-						? message
-						: "AssertionError"		
-		output += "\n"
+	ReasonExpected = function(expected, actual) {
+		self.Reason("expected <" + string(expected) + ">, but <" + string(actual) + ">");
+	}
+	
+	toString = function() {
+		var output;
+		output = name;
+		output += assertionName=="" ? "" : " <"+assertionName+">";
+		output += "\n";
 		
-		if onTraceStack {
-			var len = array_length(stacktrace);
-			for(var i = 0; i < len; i++)
-				output += "[" + string(len - i - 1) + "] "
-						+ stacktrace[i] + "\n";
-		}
+		if is_string(reason)
+			output += " reason - " + reason + "\n";
 		
-		var len = string_length(output);
-		return string_delete(output, len, 1);
+		output += GetStackLog();
+		
+		return output;
 	}
 	
-	function getStacktrace() {
-		return stacktrace;
-	}
-	
-	traceStack();
+	Trace(1);
 }
