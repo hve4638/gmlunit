@@ -64,7 +64,7 @@ var reportlog = tc.GetReportLog();
 
 **parameter:**
 
-msg<`string`> : 단언 실패시 예외와 함께 호출할 메세지
+msg<`string`> : Assertion 실패시 예외와 함께 호출할 메세지
 
-trace<`bool`> : 단언 실패시 call stack을 함께 출력 (기본값: `true`)
+trace<`bool`> : Assertion 실패시 call stack을 함께 출력 (기본값: `true`)
 
